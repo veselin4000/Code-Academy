@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int findBiggestPos(int a){
-  int count = 0;
+  int count = -1;
   while (a!=0)
   {
     count++;

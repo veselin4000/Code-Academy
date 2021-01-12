@@ -10,6 +10,6 @@
 
 int main(){
   int a = 15;
-  int ind =4;
-  removeBits(a, ind-1);
+  int ind =3;
+  removeBits(a, ind);
   }

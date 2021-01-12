@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 void oddNumbers(int a){
-  int s=a;
+  int s = a;
   int counter = 0;
   int mask = 1;
+  mask = mask<<1;
   while (s>0){
     if (counter%2==0){
       mask = mask<<counter;
@@ -15,6 +16,6 @@ void oddNumbers(int a){
 }
 
 int main(){
-  int a = 5;
+  int a = 15;
   oddNumbers(a);
 }
