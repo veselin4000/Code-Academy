@@ -1,3 +1,4 @@
+  
 #include <stdio.h>
 
 int main(){
@@ -18,19 +19,21 @@ int main(){
         printf("Nqma nalichni karavani.Molq izberete drugo.\n");
         continue;
       }
-      sum+=90;brKar--;
+      sum+=90;
+      brKar--;
     }else if (rez == 2){
       if (brKemp==0){
         printf("Nqma nalichni kemperi.Molq izberete drugo.\n");
         continue;
       }
-      sum+=100;brKemp--;
+      sum+=100;
+      brKemp--;
     }else{
       printf("Greshen izbor.Opitaite otnovo.\n");
       continue;
     }
     printf("Zhelaete li oshte neshto? y/n\n");
-    scanf("%s",otg);
+    scanf("%s",&otg);
     if (otg[0]!='y'){
       break;
     }
