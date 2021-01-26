@@ -8,11 +8,12 @@ void bin(unsigned n) {
 		(n & i)? printf("*"): printf("."); 
 	printf("\n");
 }
+
 int main(){
   int a=1;
   for (int i = 0; i < 8; i++){
-    int c= a<<i;
-    bin(c);
+    //int c= a<<i;
+    bin(i);
     sleep(2);
   }
 }
