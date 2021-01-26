@@ -12,7 +12,8 @@ int main(){
   char arr[1024];
 
   while ((c=getchar())!=EOF){
-    arr[count]=c;count++;
+    arr[count]=c;
+    count++;
     if (count>80&&c=='\n'){
       count = 0;
       printf("%s",arr);

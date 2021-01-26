@@ -16,7 +16,7 @@ int main(){
     scanf("%s",s);
     reverse(s);
     for (int i = 0; i < strlen(s); i++){
-      s[i] = '0';
+      s[i] = 0;
     }
     printf("\n");
   }
