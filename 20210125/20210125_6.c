@@ -13,6 +13,7 @@ int main(){
       letterCounter++; 
     }
   }
-  printf("%d %d",digitCounter, letterCounter);
+  printf("Cifri: %d\n"
+        "Bukvi: %d",digitCounter, letterCounter);
   return 0;
 }

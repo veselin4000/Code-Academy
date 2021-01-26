@@ -14,8 +14,8 @@ int main(){
       spaceCount++;
     }
   }
-  printf("Spaces: %d\n", spaceCount);
-  printf("Tabs: %d\n", tabCount);
-  printf("New lines: %d\n", newLineCount);
+  printf("Spaces: %d\n"
+        "Tabs: %d\n"
+        "New lines: %d\n", spaceCount, tabCount, newLineCount);
   return 0;
 }
