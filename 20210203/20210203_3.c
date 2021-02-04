@@ -7,26 +7,18 @@
 #include <stdio.h>
 
 int linSearch(int a[], int l, int d){
-int pos[l];int j=0;
   for (int i = 0; i < l; i++){
     if (a[i]==d){
-      pos[j]=i;j++;
+      return i;
     }
   }
-  if (j==0){
-   return -1;
-  }else{
-    printf("Positions of equal numbers:");
-    for (int i = 0; i < j; i++){
-      printf("%d ",pos[i]);
-    } 
-  }
+  return -1;    
 }
 
 int main(){
 int a[] = {1, 5, 2, 7, 7};
 int len = sizeof(a)/sizeof(a[0]);
-int num =8;
- linSearch(a, len, num);
+int num =7;
+ printf("%d", linSearch(a, len, num));
   return 0;
 }
