@@ -1,3 +1,5 @@
+/*Задача 6. Пренапишете функцията int linear_search(const int a[], int n, int
+key); използайки пойнтер аритмртиката без инкрементиращи променливи.*/
 #include <stdio.h>
 
 int linear_search(const int a[], int n, int key){
@@ -15,4 +17,5 @@ int main(){
   int x = 10;
   int n = sizeof(arr) / sizeof(arr[0]);
   printf("%d", linear_search(arr, n, x));
+  return 0;
 }
