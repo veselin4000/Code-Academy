@@ -13,13 +13,11 @@ int main(){
   char input[32];
   char *p = input;
   char c;
-  int i=0;
   printf("Enter a message: ");
   while ((c = getchar()) != '\n'){
-    *(p+i) = c;
-    i++;
+    *p++ = c;
   }
-  for (int j = i-1; j >= 0; j--){
+  for (int j = strlen(input) - 1; j >= 0; j--){
     printf("%c", *(input+j));
   }
   return 0;

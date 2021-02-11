@@ -4,17 +4,19 @@
 #include <string.h>
 
 int strend(char *s, char *t){
+  int x = 0;
     for(int j=strlen(t),i=strlen(s); j>=0; i--,j--){
       if(t[j]==s[i]){
-        return 1;
+        x = 1;
       }
-      return 0;
-    }    
+      x = 0;
+    } 
+    return x; 
 }
 
 int main(){
   char s[]="Hello world";
-  char t[]="world";
+  char t[]="sss";
   printf("%d",strend(s,t));
   return 0;
 }
