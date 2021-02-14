@@ -7,11 +7,13 @@ int main(){
   char *p;
   int size = 2, i = 0;
   printf("Enter symbols\n");
-  printf("to stop (ctrl + z)\n");
   buffer = (char*)malloc(size*sizeof(char));
   while ((c = getchar()) != EOF){
     i++;
-    p = realloc(buffer,i*sizeof(char));
+    if (size==i){
+      size*=2;
+      p = realloc(buffer,(size)*sizeof(char));
+    }
     if(p != NULL){
       buffer = p;
       buffer[i - 1] = c;

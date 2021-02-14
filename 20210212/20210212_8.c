@@ -13,7 +13,7 @@ int main(){
     exit(1);
   }
   
-  for (int i = 0; i < size; i++){
+  for (i; i < size; i++){
     printf("Enter element %d: ",i);
     scanf("%d",&buffer[i]);
   }

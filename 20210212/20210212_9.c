@@ -2,28 +2,29 @@
 #include <stdlib.h>
 int main(){
   int *arr;
-  int size;
+  int size;int i=0;
   printf("Enter size: ");
   scanf("%d", &size);
-  arr = (int *)malloc(size*sizeof(int));
+  arr = (int *)calloc(size,sizeof(int));
   if (NULL == arr){
     printf("Allocation memory error!\n");
     exit(1);
   }
-  for(int i=0;i<size;i++){
-    arr[i]=i;
-    printf("%d\t",arr[i]);
+  for(i;i<size;i++){
+    printf("%d ",arr[i]);
   }
-  printf("\nResize : ");
+  printf("\nResize allocated memory: ");
   scanf("%d", &size);
   arr = realloc(arr, size*sizeof(int));
   if (NULL == arr){
     printf("Reallocation memory error!\n");
     exit(2);
   }
-  for(int i=0;i<size;i++){
-    arr[i]=i;
-    printf("%d\t",arr[i]);
+  for(i;i<size;i++){
+    arr[i]=1;
+  }
+  for(i=0;i<size;i++){
+    printf("%d ",arr[i]);
   }
   free(arr);
   return 0;

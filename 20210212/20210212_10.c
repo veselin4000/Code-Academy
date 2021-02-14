@@ -3,17 +3,17 @@
 int main(){
   int *arr;
   int arrSize;
-  
+  int i=0;
   printf("Enter size: ");
   scanf("%d", &arrSize);
-  arr = (int *)malloc(arrSize);
+  arr = (int *)calloc(arrSize,sizeof(int));
   if (NULL == arr){
     printf("Allocation memory error!\n");
     exit(1);
   }
-  for(int i=0;i<arrSize;i++){
-    arr[i]=i;
-    printf("%d\t",arr[i]);
+  printf("Address of allocated memory: %u\n",arr);
+  for(i;i<arrSize;i++){
+    printf("%d ",arr[i]);
   }
   printf("\nEnter the new size: ");
   scanf("%d", &arrSize);
@@ -22,10 +22,17 @@ int main(){
     printf("Reallocation memory error!\n");
     exit(2);
   }
-  for(int i=0;i<arrSize;i++){
+  
+  for(i;i<arrSize;i++){
     arr[i]=i;
-    printf("%d\t",arr[i]);
+    printf("%d ",arr[i]);
   }
+
+  printf("\nAddress of allocated memory: %u\n",arr);
+  for(i=0;i<arrSize;i++){
+    printf("%d ",arr[i]);
+  }
+
   free(arr);
   return 0;
 }
