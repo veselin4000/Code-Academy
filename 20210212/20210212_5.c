@@ -21,4 +21,5 @@ int main(){
     printf("%d ", *(arr+i));
   }
   free(arr);
+  return 0;
 }

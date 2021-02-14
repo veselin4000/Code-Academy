@@ -1,3 +1,6 @@
+/*Задача 8.
+Заделяне на памет от стека с alloca.
+Заделете памет в стека (няма нужда от free())*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

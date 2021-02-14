@@ -1,3 +1,8 @@
+/*Задача 10*.
+Реализация на масив с променлива размерност
+Тази задача е подобна на задача 2, където
+използваме char масив. Тук може да използвате
+друг тип. */
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
@@ -22,7 +27,7 @@ int main(){
     printf("Reallocation memory error!\n");
     exit(2);
   }
-  
+
   for(i;i<arrSize;i++){
     arr[i]=i;
     printf("%d ",arr[i]);

@@ -1,8 +1,15 @@
+/*Задача 9.
+Разширяване на заделена памет с realloc
+Напишете програма, която пита потребителя колко
+памет иска и заделя съответния блок памет. След
+това попитайте потребителя за нов размер и
+използвайте функция, която прави това.*/
 #include <stdio.h>
 #include <stdlib.h>
 int main(){
   int *arr;
-  int size;int i=0;
+  int size;
+  int i=0;
   printf("Enter size: ");
   scanf("%d", &size);
   arr = (int *)calloc(size,sizeof(int));
