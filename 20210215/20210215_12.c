@@ -1,3 +1,6 @@
+/* Напишете програма, която дефинира масив [10][10][10],
+пълни го със случайни числа и смята средното аритметично,
+само с един цикъл. */
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -7,7 +10,7 @@ static int count = 0;
 
 void funk(int **arr,int c){
   int *f = (int*)&arr[c];
-  int a = 5;
+  int a = rand()%10;
   for (int i = 0; i < 10; i++){
     *(f+i)=a;
     sum+=a;
@@ -22,7 +25,12 @@ void funk(int **arr,int c){
     return;
   }
 }
-
+/*
+for (i = 0; i < 10*10*10; i++){
+        *(arr+i) = rand() % 101;
+        sum += *(arr+i);
+    }
+*/
 int main(){
   int c =0;
   int **arr;

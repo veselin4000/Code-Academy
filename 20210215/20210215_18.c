@@ -1,3 +1,8 @@
+/*Задача 18. Връщаме се на кода написан в задача 17. Нека сега
+отпечатаме стринговете с
+декрементиране, започвайки отзад-напред.
+*to -- = *from --;
+Проверете готовата функция strlen.*/
 #include <stdio.h>
 #include <string.h>
 
@@ -16,7 +21,7 @@ int main(){
 
   cpy(arr,arr3,arrlen);
   printf("%s\n",arr3);
-  
+
   cpy(arr1,arr4,arr1len);
   printf("%s\n",arr4);
   return 0;

@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 static int count=0;
-void swapp(char *arr,char *a,int n){
-  char *b = "great";char *w="programmer";//strcpy(arr,w);
-  int s=0,k=0,m=0,l=0;
+void swapp(char *arr,int n){
+  char *a = "poor";
+  char *b = "great";
+  char *w="programmer";
+  int k=0,start=0,l=0;
   for (int i = 0; i < n; i++){
     if (arr[i]==a[k]){
       count++;
       k++;
-      if (count==4){
-        m=i-count+1; 
+      if (count==strlen(a)){
+        start=i-count+1; 
         while (*b){
-          arr[m+l]=*(b++);
+          arr[start+l]=*(b++);
           l++;
         }
-        arr[m+l]=' ';
+        arr[start+l]=' ';
         while (*w){
-          arr[m+l+1]=*w;
+          arr[start+l+1]=*w;
           *w++;
           l++;
         }
@@ -30,11 +32,9 @@ void swapp(char *arr,char *a,int n){
 
 int main(){
   char arr[] = "I am a poor programmer";
-  char *p = arr;
-  char *a = "poor";
-  
   int n=strlen(arr);
-  swapp(arr,a,n);
+
+  swapp(arr,n);
   printf("%s",arr);
   return 0;
 }

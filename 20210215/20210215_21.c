@@ -1,3 +1,5 @@
+/*Задача 21. Напишете функция, която сортира лексикографски масив от
+символи (char[]) използвайки qsort.*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

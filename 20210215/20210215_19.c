@@ -1,3 +1,5 @@
+/*Задача 19. Дефинирайте стринг: „Baba, kaka, mama” заменете „а“
+със „о“*/
 #include <stdio.h>
 #include <string.h>
 
