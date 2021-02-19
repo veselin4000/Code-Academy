@@ -17,7 +17,7 @@ void passGen(){
   srand(time(NULL));
   printf("Length:\n");
   scanf("%d",&n);
-  char arr[n];
+  char *arr=calloc(n,sizeof(char));
   char *s = arr;
   printf("Number of small letters:\n");
   scanf("%d",&smallLet);
@@ -28,38 +28,40 @@ void passGen(){
   printf("Number of digits:\n");
   scanf("%d",&dig);
   int k;
-  int ss;int pos=0;int a;
+  int pos=0;int a;
   while(pos<n){
     a=rand()%4;
+    int x= rand()%n;
     switch (a){
       case 0:
-        if(smallLet>0){
-          *(s+(rand()%n+1))=(*funk_ptr[0])();
+        if(smallLet>0&&arr[x]==0){
+          *(s+x)=(*funk_ptr[0])();
           smallLet--;
           pos++;
         }break;
       case 1:
-        if(capLet>0){
-            *(s+(rand()%n+1))=(*funk_ptr[1])();
+        if(capLet>0&&arr[x]==0){
+            *(s+x)=(*funk_ptr[1])();
             capLet--;
             pos++;
-            } break;
+        } break;
       case 2:
-        if(symb>0){
-          *(s+(rand()%n+1))=(*funk_ptr[2])();
+        if(symb>0&&arr[x]==0){
+          *(s+x)=(*funk_ptr[2])();
           symb--;
           pos++;
-          }break;
+        }break;
       case 3:
-        if(dig>0){ *(s+(rand()%n+1))=(*funk_ptr[3])();
+        if(dig>0&&arr[x]==0){
+           *(s+x)=(*funk_ptr[3])();
           dig--;
           pos++;
-          }break;
+        }break;
       default: break;
     }
   }
   for (int i = 0; i < n; i++){
-      printf("%c-%d ",arr[i],arr[i]);
+      printf("%c",arr[i]);
     }
 }
 

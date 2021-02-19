@@ -8,7 +8,7 @@
 #include<stdlib.h>
 #include <time.h>
 int main(){
-  int i=0,j=0;
+  int i=0,j=0,cycles=0;
   int chessBoard[8][8];
   int *p=(int*)chessBoard;
   srand(time(NULL));
@@ -17,6 +17,7 @@ int main(){
   int row=0,col=0,totalEl=0;
   printf("%c%d  ",'A',8);
   while (1){
+    cycles++;
     if (*(p+8*row+col)==1){
       col++;totalEl++;
       if (col==8){
@@ -131,7 +132,8 @@ int main(){
     }
   }
 
-  printf("\n");
+  printf("\n\n");
+  printf("Number of cycles until all elements are visited: %d\n",cycles);
   int q=8;
   for (int j = 0; j < 8; j++){
     printf("%c ",'A'+j);
