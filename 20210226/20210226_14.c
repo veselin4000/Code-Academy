@@ -1,106 +1,80 @@
+/*
+Напишете програма, в която се въвеждат пореден номер,
+име, фамилия, възраст на участници в маратон. Изискването
+е за името и фамилията да не се използват масиви с
+фиксирана дължина. След като въвеждането завърши,
+изведете списък с участниците. 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-int main(){
-  int *id, *age;
-  char **fName, **lName;
-  int i, x = 1;int recordMem=4;
-  int j;
+#include <time.h>
 
-  id = (int *)malloc(recordMem*sizeof(int));
-  if(NULL == id){
-    printf("Allocation memory error!\n");
-    exit(3);
-  }
-  fName = (char **)malloc(recordMem*sizeof(char *));
-  if(NULL == fName){
-    printf("Allocation memory error!\n");
-    exit(1);
-  }
-  lName = (char **)malloc(recordMem*sizeof(char *));
-  if(NULL == lName){
-    printf("Allocation memory error!\n");
-    exit(2);
-  }
-  age = (int *)malloc(recordMem*sizeof(int));
-  if(NULL == age){
-    printf("Allocation memory error!\n");
-    exit(4);
-  }
-  
-  for(i=0;x==1;i++){
-    printf("Enter id: ");
-    fflush(stdin);
-    scanf("%d", &(id[i]));
+typedef struct {
+        int num;
+        int age;
+        char * firstName;
+        char * lastName;
+}members;
 
-    printf("Enter first name: ");
-    fName[i] = (char *)malloc(i*sizeof(char));
-    if(NULL == fName[i]){
-      printf("Allocation memory error!\n");
-      exit(5);
+char * dynamicString (char * str);
+
+int main(void){
+    int arrSize=2;
+
+    members * list = (members*)(malloc(arrSize*sizeof(members))); // pointer to heap memory for struct array
+
+    //Loop to fillup the list
+    for(int i=0; i<arrSize;i++){
+        //alocate memeory for pointer members
+        
+        printf("Enter your number:\n");
+        fflush(stdin);
+        scanf("%d", &list[i].num);
+
+        list[i].firstName = (char*)(malloc(sizeof(char)));
+        printf("Enter your first name:\n");
+        list[i].firstName = dynamicString(list[i].firstName);
+        
+        list[i].lastName = (char*)(malloc(sizeof(char)));
+        printf("Enter your last name:\n");
+        list[i].lastName = dynamicString(list[i].lastName);
+
+        printf("Enter your age:\n");
+        fflush(stdin);
+        scanf("%d", &list[i].age);
     }
-    fflush(stdin);
-    gets(fName[i]);
 
-    printf("Enter the last name: ");
-    lName[i] = (char *)malloc(i*sizeof(char));
-    if(NULL == lName[i]){
-        printf("Allocation memory error!\n");
-        exit(6);
+    //Loop to print
+    printf("Number\tFirst name\tLast name\tAge\n");
+    for(int i=0; i<=arrSize;i++){
+        printf("%d\t%s\t\t%s\t%d\n", list[i].num, list[i].firstName, list[i].lastName, list[i].age);
     }
-    fflush(stdin);
-    gets(lName[i]);
 
-    printf("Enter the age:");
-    fflush(stdin);
-    scanf("%d", &age[i]);
-
-    printf("Press 1 to enter more records or 0 to stop\n");
-    fflush(stdin);
-    scanf("%d", &x);
-
-    if(x == 0){
-      printf("Users: \n");
-      for(j = 0; j <= i; j++){
-        printf("\nId: %d\n", id[j]);
-        printf("First name: %s\n", fName[j]);
-        printf("Last name: %s\n", lName[j]);
-        printf("Age: %d\n", age[j]);
-        if (i==recordMem){
-          recordMem*=2;
-           id = (int *)realloc(id, recordMem*sizeof(int));
-          if(NULL == id){
-            printf("Allocation memory error!\n");
-            exit(7);
-          }
-           fName = (char **)realloc(fName,recordMem*sizeof(char *));
-          if(NULL == fName){
-            printf("Allocation memory error!\n");
-            exit(1);
-          }
-          lName = (char **)realloc(lName,recordMem*sizeof(char *));
-          if(NULL == lName){
-            printf("Allocation memory error!\n");
-            exit(2);
-          }
-          age = (int *)realloc(age, recordMem*sizeof(int));
-          if(NULL == age){
-            printf("Allocation memory error!\n");
-            exit(8);
-          }
-        }
-      }
+    //Loop to free alocated memory
+    for(int i=0; i<=arrSize;i++){
+        free(list[i].firstName);
+        free(list[i].lastName);
     }
-  }
-   for (i; i >=0 ; i--){
-    free(fName[i]);
-  }
-  for (i; i >=0 ; i--){
-    free(lName[i]);
-  }
-  free(id);
-  free(fName);
-  free(lName);
-  free(age);
+    free(list);
 
-  return 0;
+    return 0;
 }
+
+char * dynamicString(char * str){
+    //str = (char*)(malloc(sizeof(char)));
+    char c;
+    int i=0;
+    fflush(stdin);
+    while ((c = getchar()) != '\n') {
+        str = realloc(str, sizeof(char)+1);
+            if (NULL == str){
+                printf("Reallocation memory error!\n");
+                exit(2);
+            }
+        str[i] = c;
+        i++;
+    }
+    str[i] = '\0';
+    return str;
+   }
