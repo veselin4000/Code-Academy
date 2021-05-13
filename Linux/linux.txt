@@ -1,0 +1,40 @@
+1.
+cd ~
+mkdir projects
+cd projects
+touch house {1..9}
+ls house*
+
+
+2.1
+mkdir $HOME/projects/houses/doors
+touch $HOME/projects/houses/bungalow.txt             
+touch $HOME/projects/houses/doors/bifold.txt
+
+mkdir -p $HOME/projects/outdoors/vegetation 
+touch $HOME/projects/outdoors/vegetation/landscape.txt 
+
+
+
+2.2
+mkdir projects/houses
+cd projects/houses                                   
+touch bungalow.txt 
+mkdir doors                                 
+cd doors                                            
+touch bifold.txt                                    
+                                          
+mkdir ../../outdoors/vegetation 
+cd ../../        
+cd outdoors/vegetation       
+touch landscape.txt                                 
+
+
+
+3.
+cp projects/{house1,house5} $HOME/projects/houses/  
+cd projects/houses                            
+
+4.
+rm -f projects/house{6..8}    
+cd projects                
