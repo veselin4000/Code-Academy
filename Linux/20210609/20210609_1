@@ -1,1 +1,32 @@
+/* 1.Напишете скрипт, който да проверява дали файлът има права за
+четене(-r), за писане(-w) и за екзекютване(-x). По подобие на примера,
+показан по горе, проверяващ името дали е файл, директория или
+дивайс. */
 
+$ cat > test1.sh
+#!/bin/bash
+read -p “What file do you want to test? “ filename
+if [ ! -e “$filename” ]; 
+then
+  echo “The file does not exist.”
+fi
+
+ls -ld “$filename”
+
+if [ -r “$filename” ]; 
+then
+  echo “$filename is readable.”
+fi
+
+if [ -w “$filename” ]; 
+then
+  echo “$filename is writeable”
+fi
+if [ -x “$filename” ]; 
+then
+  echo “$filename is executable”
+fi
+
+ls -la exercise1.sh
+chmod u+x test1.sh
+./test1.sh test.txt
