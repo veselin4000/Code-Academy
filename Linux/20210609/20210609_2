@@ -1,0 +1,27 @@
+/*
+2. Напишете С файл, който да принтира число и го компилирайте.
+Пуснете в пайп екзето ./а.оut |./test2 със скрипта test2 за да
+прихванете изхода от скрипта и да принтирате с ехо текста the
+following result have been provided from result2.c: 666 и резултта от
+екзето.
+*/
+
+#include<stdio.h>
+
+int main(){
+        int num=5;
+        printf("%d",num);
+}
+
+
+
+#!/bin/bash
+
+if [ -z $1 ]
+then
+        echo NO arguments of command line
+        read VAR
+else
+        VAR=$1
+fi
+echo the following filenames have been provided: $VAR
