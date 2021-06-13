@@ -1,6 +1,7 @@
 
 #!/bin/bash
 PREFIX=194.145.63
+touch "test_$(date)"
 for OCTET in `seq 1 255`
 do
 	echo -en "Pinging ${PREFIX}.${OCTET}...."
@@ -8,10 +9,8 @@ do
 	if [ "$?" -eq "0" ];
 	then
 		echo "OK"
-		echo "${PREFIX}.${OCTET} OK `date`" >> test_ping.sh
 		
 	else
 		echo "FAILED"
-		echo "${PREFIX}.${OCTET} FAILED `date`" >> test_ping.sh
 	fi
-done
+done > "test_$(date)"
