@@ -18,5 +18,7 @@ int main(int argc, char* argv[]){
         for( int i=0;i<argc;i++){
                 data[i]=atoi(argv[i]);
         }
-        printf("%d",biggestNum(data));
+        printf("%d\n",biggestNum(data));
+        return 0;
 }
+
