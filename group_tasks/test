@@ -1,1 +1,12 @@
 
+#!/bin/bash
+
+./a.out
+
+READ=$?
+if [ "$READ" -eq "0" ]
+then
+        echo "test passed"
+else
+        echo "test didnt pass"
+fi
