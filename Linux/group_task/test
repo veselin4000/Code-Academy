@@ -1,0 +1,15 @@
+#!/bin/bash
+
+./a.out $@
+
+READ=$?
+if [ "$READ" -eq "0" ]
+then
+        echo "test passed"
+elif [ "$READ" -eq "2" ]
+then
+        echo "Too many arguments"
+elif [ "$READ" -eq "3" ]
+then
+        echo "There isn't a string to count"
+fi
