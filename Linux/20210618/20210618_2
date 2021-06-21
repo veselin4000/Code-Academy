@@ -1,0 +1,28 @@
+/*
+Направете двумерен масив 5 на 5, запълнете го с рандом
+стойности и го отпечатайте на екрана.
+*/
+#!/bin/bash
+
+declare -A matrix
+
+num_rows=5
+num_columns=5
+
+for ((i=1;i<=num_rows;i++)) 
+do
+    for ((j=1;j<=num_columns;j++)) 
+    do
+        matrix[$i,$j]=$RANDOM
+    done
+done
+
+for ((j=1;j<=num_columns;j++)) 
+do
+    for ((i=1;i<=num_rows;i++)) 
+    do
+        printf ${matrix[$i,$j]}
+        printf " "
+    done
+    echo
+done
