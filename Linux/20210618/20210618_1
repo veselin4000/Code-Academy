@@ -1,0 +1,24 @@
+/*Напишете bash функцията function bubblesort(). Имплементирайте
+алгоритъма на бъбълсорт и сортирайте масива data=( raspberry apple
+grapefruit melon watermelon grape wine )
+*/
+
+#!/bin/bash
+
+arr=( raspberry apple grapefruit melon watermelon grape wine )
+
+function bubblesort(){
+l=${#arr[@]}
+for i in `seq 0 $l`
+do
+  for (( j=l; j > i; j-- ))
+  do
+    if [[ ${arr[j-1]} > ${arr[j]} ]]
+    then
+    temp=${arr[j]}
+    arr[j]=${arr[j-1]}
+    arr[j-1]=$temp
+    fi
+  done
+done
+}
