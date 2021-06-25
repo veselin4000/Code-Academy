@@ -1,1 +1,28 @@
+FILE="zad"
 
+if [ -f "${FILE}.c" ]
+then
+        gcc "${FILE}.c" -o "$FILE"
+else
+        echo -e "\n ${FILE}.c does not exist"
+fi
+
+./a.out $@
+
+READ=$?
+if [ "$READ" -eq "0" ]
+then
+        echo "test passed"
+elif [ "$READ" -eq "2" ]
+then
+        echo "Wrong number of arguments(3 needed)"
+elif [ "$READ" -eq "3" ]
+then
+        echo "This month has 28 days"
+elif [ "$READ" -eq "4" ]
+then
+        echo "Wrong day of the month."
+elif [ "$READ" -eq "5" ]
+then
+        echo "Wrong month."
+fi
